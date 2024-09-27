@@ -1,14 +1,14 @@
 {
-    "name": "reedtechus/azure-service-bus-laravel",
+    "name": "drlopes/azure-service-bus-laravel",
     "description": "Provides an interface to Azure's Service Bus.",
     "keywords": [
-        "reedtechus",
+        "drlopes",
         "laravel",
         "azure-service-bus-laravel",
         "azure",
         "service-bus"
     ],
-    "homepage": "https://github.com/reedtechus/azure-service-bus-laravel",
+    "homepage": "https://github.com/drlopes/azure-service-bus-laravel",
     "license": "MIT",
     "authors": [
         {
