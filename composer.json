@@ -1,0 +1,77 @@
+{
+    "name": "reedtechus/azure-service-bus-laravel",
+    "description": "Provides an interface to Azure's Service Bus.",
+    "keywords": [
+        "reedtechus",
+        "laravel",
+        "azure-service-bus-laravel",
+        "azure",
+        "service-bus"
+    ],
+    "homepage": "https://github.com/reedtechus/azure-service-bus-laravel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chris Reed",
+            "email": "chris@reedtech.us",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "illuminate/contracts": "^9.21|^10.0",
+        "sammyjo20/saloon-cache-plugin": "^3.0",
+        "sammyjo20/saloon-laravel": "^3.0",
+        "spatie/laravel-package-tools": "^1.14.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.4",
+        "nunomaduro/collision": "^6.0",
+        "nunomaduro/larastan": "^2.0.1",
+        "orchestra/testbench": "^7.19",
+        "pestphp/pest": "^1.21",
+        "pestphp/pest-plugin-laravel": "^1.1",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan": "^1.9",
+        "phpstan/phpstan-deprecation-rules": "^1.0",
+        "phpstan/phpstan-phpunit": "^1.0",
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "ReedTech\\AzureServiceBus\\": "src",
+            "ReedTech\\AzureServiceBus\\Database\\Factories\\": "database/factories"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ReedTech\\AzureServiceBus\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ReedTech\\AzureServiceBus\\AzureServiceBusServiceProvider"
+            ],
+            "aliases": {
+                "AzureServiceBus": "ReedTech\\AzureServiceBus\\Facades\\AzureServiceBus"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
